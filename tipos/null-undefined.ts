@@ -1,11 +1,11 @@
 (()=> {
 
     // strictNullChecks
-    let isActive: boolean = null;
+    let isActive: boolean = true; //null;
 
     
 
-    // console.log(isActive)
+     console.log(isActive)
 
 
 
