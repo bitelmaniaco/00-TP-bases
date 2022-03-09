@@ -1,3 +1,6 @@
+( () => {
+
+
 // Funciones Básicas
 function sumar( a: number, b: number ): number{
   return a + b;
@@ -31,3 +34,7 @@ const noHaceNada = ( numero: number, texto: string, booleano: boolean, arreglo: 
 let noHaceNadaTampoco: (n: number, s: string, b: boolean, ar: string[]) => void;
 
 noHaceNadaTampoco = noHaceNada
+
+})()
+
+
