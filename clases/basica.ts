@@ -1,5 +1,5 @@
 (() => {
-
+    console.log('BASICA');
     class Vengador {
         
         // private nombre: string;
@@ -24,6 +24,6 @@
     }
 
     // const antman: Vengador = new Vengador();
-    console.log(Vengador.getEdadMedia());
+    console.log('Basico es: ', Vengador.getEdadMedia());
 
 })()
