@@ -1,37 +1,47 @@
 "use strict";
 (() => {
-    const vengadores = {
-        furia: 'Samuel L. Jackson',
-        ironman: 'Borracho Downey Jr.',
-        vision: 'Paul Bettany',
-        activo: true,
-        poder: 1500
-    };
-    const { furia, poder } = vengadores;
-    console.log(furia, poder);
-    const heroesArr = ['Batman', 'Superman', 'Spiderman', 'Ironman'];
-    const [batman, , spiderman] = heroesArr;
-    console.log(batman, spiderman);
-})();
-(() => {
-    const ironman = {
-        nombre: 'Ironman',
-        herramienta: 'Traje'
-    };
-    const spiderman = {
-        nombre: 'Spiderman',
-        herramienta: 'Telaraña'
-    };
-    const capi = {
-        nombre: 'Capitan America',
-        herramienta: 'Escudo'
-    };
-    const vengadores = [ironman, spiderman, capi];
-    for (const vengador of vengadores) {
-        console.log(vengador);
+    class Vengador {
+        constructor(nombre, equipo, nore, edad) {
+            this.nombre = nombre;
+            this.equipo = equipo;
+            this.nore = nore;
+            this.edad = edad;
+        }
+        static getEdadMedia() {
+            return this.name;
+        }
+        biografia() {
+            return `${this.nombre} (${this.equipo})`;
+        }
     }
+    Vengador.edadMedia = 35;
+    console.log(Vengador.getEdadMedia());
 })();
 (() => {
-    console.log('poco del ES6');
+    class Vengador {
+        constructor(nombre, nombreReal) {
+            this.nombre = nombre;
+            this.nombreReal = nombreReal;
+            console.log('creado ');
+        }
+        biografia() {
+            return `${this.nombre} (${this.nombreReal})`;
+        }
+        getNombre() {
+            return this.nombre;
+        }
+    }
+    class Xmen extends Vengador {
+        constructor(na, reNo, esMutante) {
+            super(na, reNo);
+            this.esMutante = esMutante;
+        }
+        getNombreReal() {
+            return super.getNombre();
+        }
+    }
+    const wolverine = new Xmen('Wolverine', 'Logan', true);
+    console.log(wolverine);
+    console.log(wolverine.getNombreReal());
 })();
 //# sourceMappingURL=main.js.map
