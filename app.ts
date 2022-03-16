@@ -1,40 +1,79 @@
-( () => {
-
-
-// Funciones Básicas
-function sumar( a: number, b: number ): number{
-  return a + b;
+// Crear interfaces
+// Cree una interfaz para validar el auto (el valor enviado por parametro)
+interface Auto {
+  encender: boolean;
+  velocidadMaxima: number;
+  acelear():void;
 }
 
-const contar = ( heroes: string[] ): number => {
-  return heroes.length;
-}
-const superHeroes: string[] = ["Flash", "Arrow", "Superman", "Linterna Verde"];
-contar(superHeroes);
 
-//Parametros por defecto
-const llamarBatman = ( llamar: boolean = true ) => {
-  if( llamar ){
-    console.log("Batiseñal activada");
+const conducirBatimovil = ( auto:Auto ):void => {
+  auto.encender = true;
+  auto.velocidadMaxima = 100;
+  auto.acelear();
+}
+
+const batimovil:Auto = {
+  encender:false,
+  velocidadMaxima:0,
+  acelear(){
+    console.log("...... gogogo!!!");
   }
 }
 
-llamarBatman();
+// Cree una interfaz con que permita utilizar el siguiente objeto
+// utilizando propiedades opcionales
+interface Guason {
+  reir?: boolean;
+  comer?: boolean;
+  llorar?: boolean;
+}
 
-// Rest?
-const unirheroes = ( ...personas: string[] ): string => {
-return personas.join(", ");
+const guason:Guason = {
+  reir: true,
+  comer:true,
+  llorar:false
+}
+
+const reir = ( guason:Guason ):void => {
+  if( guason.reir ){
+    console.log("JAJAJAJA");
+  }
 }
 
 
-// Tipo funcion
-const noHaceNada = ( numero: number, texto: string, booleano: boolean, arreglo: string[] )=> {}
+// Cree una interfaz para la siguiente funcion
+interface CiudadGoticaFn {
+  (ciudadanos: string[]): number
+}
+const ciudadGotica:CiudadGoticaFn = ( ciudadanos:string[] ):number => {
+  return ciudadanos.length;
+}
 
-// Crear el tipo de funcion que acepte la funcion "noHaceNada"
-let noHaceNadaTampoco: (n: number, s: string, b: boolean, ar: string[]) => void;
+// Cree una interfaz que obligue crear una clase
+// con las siguientes propiedades y metodos
+interface PersonaInterface {
+  edad: number;
+  estadoCivil: string;
+  nombre: string;
+  sexo: string;
+  imprimirBio():void;
+}
+/*
+  propiedades:
+    - nombre
+    - edad
+    - sexo
+    - estadoCivil
+    - imprimirBio(): void // en consola una breve descripcion.
+*/
+class Persona implements PersonaInterface {
+  public edad: number;
+  public estadoCivil: string;
+  public nombre: string;
+  public sexo: string;
 
-noHaceNadaTampoco = noHaceNada
-
-})()
-
-
+  imprimirBio() {
+    
+  }
+}
